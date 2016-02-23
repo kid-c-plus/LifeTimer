@@ -20,7 +20,7 @@ static time_t checktime; //struct holding time user last checked watch
 static char *days[7] = {"sunday", "monday", "tuesday", "wednesday", "thursday", "friday", "saturday"};
 static char *months[12] = {"january", "february", "march", "april", "may", "june", "july", "august", "september", "october", "november", "december"};
 
-static char* time_between(time_t end, time_t start) { //returns time between tm structs, in format [hours (max 24), minutes]
+static char* time_between(time_t end, time_t start) {
   static char buffer[11];
   double diff = difftime(end, start);
   if(diff < 3600) {
@@ -185,6 +185,12 @@ static void init() {
   tick_timer_service_subscribe(MINUTE_UNIT, tick_handler);
   
   accel_tap_service_subscribe(time_window_push);
+
+  window_stack_push(s_time_window, true);
+  
+  update_time();
+ 
+  app_timer_register(5000, time_window_pop, (void *) NULL);
 }
 
 static void deinit() {
