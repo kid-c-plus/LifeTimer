@@ -1,0 +1,33 @@
+{
+    "appKeys": {},
+    "capabilities": [
+        ""
+    ],
+    "companyName": "just...me",
+    "enableMultiJS": true,
+    "longName": "Life Timer",
+    "projectType": "native",
+    "resources": {
+        "media": [
+            {
+                "file": "images/LifeTimerIcon",
+                "menuIcon": true,
+                "name": "Icon",
+                "targetPlatforms": null,
+                "type": "bitmap"
+            }
+        ]
+    },
+    "sdkVersion": "3",
+    "shortName": "Life Timer",
+    "targetPlatforms": [
+        "aplite",
+        "basalt",
+        "chalk"
+    ],
+    "uuid": "45a485a4-647b-42a9-a023-c87b30f20861",
+    "versionLabel": "1.0",
+    "watchapp": {
+        "watchface": true
+    }
+}
